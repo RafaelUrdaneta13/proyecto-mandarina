@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: '', children:[
     { path: '',  component: HomeComponent },
     { path: 'offers', component: OffersComponent},
-    { path: 'book:/id', component: DetailsBookComponent}, 
     { path: 'user/login', component: LoginComponent},
     { path: 'user/register', component: RegisterComponent},
     { path: 'user/profile', component: ProfileComponent}
@@ -25,6 +24,7 @@ const routes: Routes = [
   {path:'admin', children:[
     { path: '', component: AdminComponent},
     { path: 'list-books', component: ListBooksComponent},
+    { path: 'book/:id', component: DetailsBookComponent}
   ], component: AdminNavigationComponent
 
   },
