@@ -30,4 +30,8 @@ export class ProductosService {
   return this.Productos;
   }
 
+  obtenerDetalles(i){
+  return this.Productos[i];
+  }
+
 }
