@@ -10,6 +10,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class ListBooksComponent implements OnInit {
 
   Productos: any [] = [];
+  Categoria: number=1;
 
   constructor(private _servicio: ProductosService) { 
 

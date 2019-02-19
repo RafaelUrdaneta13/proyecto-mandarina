@@ -16,15 +16,16 @@ const routes: Routes = [
   { path: '', children:[
     { path: '',  component: HomeComponent },
     { path: 'offers', component: OffersComponent},
-    { path: 'user/login', component: LoginComponent},
-    { path: 'user/register', component: RegisterComponent},
-    { path: 'user/profile', component: ProfileComponent}
+    { path: 'login', component: LoginComponent},
+    { path: 'register', component: RegisterComponent},
+    { path: 'profile', component: ProfileComponent},
+    { path: 'list-books', component: ListBooksComponent},
+    { path: 'book/:id', component: DetailsBookComponent}
   ], component: MainNavigationComponent 
   },
   {path:'admin', children:[
     { path: '', component: AdminComponent},
-    { path: 'list-books', component: ListBooksComponent},
-    { path: 'book/:id', component: DetailsBookComponent}
+    
   ], component: AdminNavigationComponent
 
   },
