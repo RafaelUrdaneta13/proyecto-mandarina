@@ -11,6 +11,8 @@ import { Page404Component } from './components/page404/page404.component';
 import { MainNavigationComponent } from './navigations/main-navigation/main-navigation.component';
 import { AdminNavigationComponent } from './navigations/admin-navigation/admin-navigation.component';
 import { AdminComponent } from './views/admin/admin.component';
+import { CrudComponent } from './components/crud/crud.component';
+import { ProductoComponent } from './components/crud/producto/producto.component';
 
 const routes: Routes = [
   { path: '', children:[
@@ -25,6 +27,8 @@ const routes: Routes = [
   },
   {path:'admin', children:[
     { path: '', component: AdminComponent},
+    { path: 'producto', component: CrudComponent},
+    { path: 'lista', component: ProductoComponent}
     
   ], component: AdminNavigationComponent
 
