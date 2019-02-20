@@ -13,6 +13,7 @@ import { AdminNavigationComponent } from './navigations/admin-navigation/admin-n
 import { AdminComponent } from './views/admin/admin.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { ProductoComponent } from './components/crud/producto/producto.component';
+import { CrudListComponent } from './components/crud/crud-list/crud-list.component';
 
 const routes: Routes = [
   { path: '', children:[
@@ -22,13 +23,17 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent},
     { path: 'profile', component: ProfileComponent},
     { path: 'list-books', component: ListBooksComponent},
-    { path: 'book/:id', component: DetailsBookComponent}
+    { path: 'book/:id', component: DetailsBookComponent},
+    { path: 'detail/:id', component: CrudListComponent},
+    { path: 'lista', component: ProductoComponent},
   ], component: MainNavigationComponent 
   },
   {path:'admin', children:[
     { path: '', component: AdminComponent},
     { path: 'producto', component: CrudComponent},
-    { path: 'lista', component: ProductoComponent}
+    { path: 'list-books', component: ListBooksComponent},
+   
+    
     
   ], component: AdminNavigationComponent
 

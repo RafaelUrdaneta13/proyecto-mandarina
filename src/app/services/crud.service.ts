@@ -22,27 +22,52 @@ export class CrudService {
 
   private productCollection: AngularFirestoreCollection<Producto>;
   private products: Observable<Producto[]>;
+  private productDoc: AngularFirestoreDocument<Producto>;
+  private product: Observable<Producto>;
+  public selectedProduct: Producto ={};
+
+
   getProducts(){
     return this.products = this.productCollection.snapshotChanges()
     .pipe(map(changes=>{
       return changes.map(action =>{
         const data = action.payload.doc.data() as Producto;
-        data.$key = action.payload.doc.id;
+        data.id = action.payload.doc.id;
         return data;
       })
 
     }));
   }
 
-  insertProduct(product: Producto){
+  getOneProduct( idProduct: string){
+    this.productDoc = this.afs.doc<Producto>(`products/${idProduct}`);
+    return this.product = this.productDoc.snapshotChanges()
+    .pipe(map(action=>{
+      if(action.payload.exists == false){
+        return null;
+      } else{
+        const data = action.payload.data() as Producto;
+        data.id = action.payload.id;
+        return data;
+      }
+
+    }));
   }
 
-  updateProduct(product: Producto){
-  
+  insertProduct(product: Producto): void{
+    this.productCollection.add(product);
   }
 
-  deleteProduct($key: string){
-  
+  updateProduct(product: Producto): void{
+   let idProduct= product.id;
+   this.productDoc = this.afs.doc<Producto>(`products/${idProduct}`);
+   this.productDoc.update(product);
+
+  }
+
+  deleteProduct(idProduct: string): void{
+    this.productDoc = this.afs.doc<Producto>(`products/${idProduct}`);
+    this.productDoc.delete(); 
   }
 
 

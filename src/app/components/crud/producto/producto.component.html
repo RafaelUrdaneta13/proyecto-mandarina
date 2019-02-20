@@ -46,8 +46,8 @@
 
   </div>
 </div> -->
-<ul class="list-group list-group-flush mt-5 ml-5" *ngFor="let item of products, index as i">
-  <li class="d-flex justify-content-between border"><img src="..." alt="..." class="img-thumbnail">
-   <h6> {{item.name}}</h6> <h6> Precio={{item.price}}</h6> <h6>{{item.apreciacion}}</h6> <button type="button" class="btn btn-warning" [routerLink]="['/admin/detail', i]">Ver Detalles</button>
+<ul class="list-group list-group-flush mt-5 ml-5 mr-5" *ngFor="let item of products">
+  <li class="d-flex justify-content-between border"><img src="{{item.imagenPrincipal}}" width="100px" alt="..." class="img-thumbnail">
+   <h6> {{item.name}}</h6> <h6> Precio={{item.price}}</h6><h6>{{item.descripcion}}</h6> <h6>{{item.apreciacion}}</h6> <button type="button" class="btn btn-warning" [routerLink]="['/detail', item.id]">Ver Detalles</button>
   </li>
 </ul>

@@ -35,6 +35,7 @@ import { SubnavComponent } from './components/subnav/subnav.component';
 import { CrudComponent } from './components/crud/crud.component';
 import { CrudListComponent } from './components/crud/crud-list/crud-list.component';
 import { ProductoComponent } from './components/crud/producto/producto.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ProductoComponent } from './components/crud/producto/producto.component
     SubnavComponent,
     CrudComponent,
     CrudListComponent,
-    ProductoComponent
+    ProductoComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

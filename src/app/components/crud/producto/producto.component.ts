@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-producto',
@@ -14,9 +14,9 @@ export class ProductoComponent implements OnInit {
 
    }
 
-   public products = [];
+   public products= [];
 
-   public product = ''; 
+   public product= ''; 
 
   ngOnInit() {
     this.productService.getProducts().subscribe(products=>{
@@ -26,15 +26,6 @@ export class ProductoComponent implements OnInit {
     })
    
   }
-
-  onSubmit(productForm:NgForm){
-  
-  
-
-  }
-  resetForm(productForm?: NgForm){
-     
-      }
 
 
   }
