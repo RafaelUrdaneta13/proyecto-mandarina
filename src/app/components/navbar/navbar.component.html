@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/"><img class="img-responsive" src="assets/img/logo.png" width="50" height="50" class="d-inline-block align-top"><h1>Mandarina Digital</h1> </a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="mainNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/offers">Offers
+        </a>
+      </li>
+      
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/user/register">Register
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/user/login"> <img class="img-responsive" src="assets/img/cuenta.png" width="50" height="50" class="d-inline-block align-top">
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/user/profile">Profile</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+        <a class="nav-link" routerLink="/admin/list-books"><img class="img-responsive" src="assets/img/carrito.png" width="50" height="50" class="d-inline-block align-top"></a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link" routerLink="/admin/list-books"><img class="img-responsive" src="assets/img/lista.png" width="50" height="50" class="d-inline-block align-top"></a>
+        </li>
+      
+      <li class="nav-item" *ngIf="isLogged">
+        <a href="#" class="nav-link" (click)="onLogout()">Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

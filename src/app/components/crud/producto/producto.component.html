@@ -1,0 +1,53 @@
+<!-- <div class='card mt-5'>
+  <div class="card-body">
+    <form #productForm="ngForm" (ngSubmt)="onSubmit(productForm)">
+      <div class="form-group">
+        <input
+        type="text"
+        class="form-control"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="productService.selectedProduct.name"
+        placeholder=""
+        
+        >
+      </div>
+      <div class="form-group">
+          <input
+          type="text"
+          class="form-control"
+          name="category"
+          #category="ngModel"
+          [(ngModel)]="productService.selectedProduct.category"
+          placeholder=""
+          
+          >
+        </div>
+        <div class="form-group">
+            <input
+            type="text"
+            class="form-control"
+            name="price"
+            #price="ngModel"
+            [(ngModel)]="productService.selectedProduct.price"
+            placeholder=""
+            
+            >
+          </div>
+
+          <button class="btn btn-primary" type="submit">
+            <i class="fas fa-plus-circle"></i>Add Producto
+          </button>
+          <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+              <i class="fas fa-sync-alt"></i>Resetear
+            </button>
+
+    </form>
+
+  </div>
+</div> -->
+<ul class="list-group list-group-flush mt-5 ml-5 mr-5" *ngFor="let item of products">
+  <li class="d-flex justify-content-between border"><img src="{{item.imagenPrincipal}}" width="100px" alt="..." class="img-thumbnail">
+   <h6> {{item.name}}</h6> <h6> Precio={{item.price}}</h6><h6>{{item.descripcion}}</h6> <h6>{{item.apreciacion}}</h6> <button type="button" class="btn btn-warning" [routerLink]="['/detail', item.id]">Ver Detalles</button>
+  </li>
+</ul>
